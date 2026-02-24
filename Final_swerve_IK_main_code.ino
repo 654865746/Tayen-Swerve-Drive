@@ -1,5 +1,17 @@
-// Full integrated swerve: encoders (MT6835 SPI), PWM RC inputs, IK, unwrap, flip, drive-servos
-// Created by TAYEN BROEMSER 
+/*//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
+
+Full integrated swerve drive code: encoders (MT6835 SPI), PWM RC inputs, IK, unwrap, flip, drive-servos
+
+Created by TAYEN BROEMSER 
+Copyright (c) 2026 
+
+All rights reserved.
+
+This source code is proprietary and confidential.
+Unauthorized copying, modification, distribution, or use
+of this software, via any medium, is strictly prohibited.
+
+*/
 #include <SPI.h>
 #include <CytronMotorDriver.h>
 #include <Servo.h>
@@ -110,7 +122,6 @@ inline uint8_t readCmdHi(uint16_t reg) { return (0x3 << 4) | ((reg >> 8) & 0x0F)
 inline uint8_t readCmdLo(uint16_t reg) { return reg & 0xFF; }
 
 // ------------------------------ Encoder read: wrap-aware EMA (SPI-safe) ------------------------------
-// ------------------------------ Encoder read: wrap-aware EMA with safety ------------------------------
 float readEncoderAngle(int csPin, float &filteredValue, float offset, float &lastWrapped, float &unwrapped) {
     uint8_t b1 = 0, b2 = 0, b3 = 0, crc_read = 0;
 
