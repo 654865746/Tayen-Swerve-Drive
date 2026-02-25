@@ -1,8 +1,13 @@
 A high performance swerve drive system utilizing brushed 555 motors, absolute encoders, and a teensy 4.1. 
+
 Uses in wheel motors and a slip ring to transmit electrical power without binding/twisting the wires.
+
 Fully holonomic with full inverse kinematics.
+
 Uses cytron motor controllers for the steering motors, and standard pwm input ESCs with linear throttling for the drive motors.
+
 Utilizes the MT6835 Magnetic Encoder Module over SPI bus.
+
 
 For more information on the design check out my ePortfoli page: https://jhu.digication.com/tayen-broemser/my-co-curriculars/published
 
